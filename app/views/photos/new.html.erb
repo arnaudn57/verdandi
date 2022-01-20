@@ -1,0 +1,6 @@
+<h2>Ajout de photo</h2>
+
+<%= simple_form_for @photo do |f| %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Ajouter", class:"btn btn-primary" %>
+<% end %>
