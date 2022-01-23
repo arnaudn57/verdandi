@@ -29,20 +29,13 @@
                     <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
                         Verdandi
                     </h1>
-
                     <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
                         L'association de danse et de musique à Metz !
                     </p>
                 </div>
-
                 <div class="videoWrapper">
-                    <video autoplay="" loop="" muted="" class="custom-video" poster="./silouhette.mp4">
-                        <source src="silouhette.mp4" type="video/mp4">
-
-                        Your browser does not support the video tag.
-                    </video>
+                  <%= video_tag "silouhette.mp4", autoplay: :autoplay, loop: :loop, muted: :muted %>
                 </div>
-
                 <div class="overlay"></div>
             </section>
 
@@ -63,19 +56,19 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">Les membres</a>
+                                <a class="nav-link" id="btnMembers">Les membres</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#portfolio">Galerie</a>
+                                <a class="nav-link" id="btnGalerie">Galerie</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#news">Evenements</a>
+                                <a class="nav-link" id="btnEvents">Evenements</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact">Contacter-nous</a>
+                                <a class="nav-link" id="btnContact">Contacter-nous</a>
                             </li>
                         </ul>
                     </div>
@@ -99,16 +92,21 @@
 
                     </div>
                 </div>
-
-                  <h2 class="text-center">Les membres de l'association</h2>
+                <div class="bg-light p-5">
+                  <h2 class="text-center" id="members">Les membres</h2>
 
                             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                               <ol class="carousel-indicators">
                                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
                                 <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
                                 <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                                <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+                                <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+                                <li data-target="#carouselExampleCaptions" data-slide-to="5"></li>
+                                <li data-target="#carouselExampleCaptions" data-slide-to="6"></li>
+
                               </ol>
-                              <div class="carousel-inner">
+                              <div class="carousel-inner text-center">
                                 <div class="carousel-item active">
                                   <%= image_tag '1', class:"tester" %>
                                 </div>
@@ -118,18 +116,23 @@
                                 <div class="carousel-item">
                                   <%= image_tag '3', class:"tester" %>
                                 </div>
+                                <div class="carousel-item">
+                                  <%= image_tag '4', class:"tester" %>
+                                </div>
+                                <div class="carousel-item">
+                                  <%= image_tag '5', class:"tester" %>
+                                </div>
+                                <div class="carousel-item">
+                                  <%= image_tag '6', class:"tester" %>
+                                </div>
+                                <div class="carousel-item">
+                                  <%= image_tag '7', class:"tester" %>
+                                </div>
                               </div>
-                              <%# <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                              </button>
-                              <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                              </button> %>
                             </div>
                           </div>
                         </div>
+                      </div>
 
             </section>
 
@@ -138,60 +141,32 @@
                     <div class="row">
 
                         <div class="col-12">
-                            <h2 class="mb-5 text-center" data-aos="fade-up">Portfolio</h2>
+                            <h2 class="mb-5 text-center" data-aos="fade-up" id="galerie">Galerie</h2>
                         </div>
 
-                        <div class="col-lg-6 col-12">
-                            <div class="portfolio-thumb mb-5" data-aos="fade-up">
-                                <a href="images/portfolio/visuals-Y4qzW3AsvqI-unsplash.jpeg" class="image-popup">
-                                    <img src="images/portfolio/visuals-Y4qzW3AsvqI-unsplash.jpeg" class="img-fluid portfolio-image" alt="">
-                                </a>
 
-                                <div class="portfolio-info">
-                                    <h4 class="portfolio-title mb-0">Effortless</h4>
-
-                                    <p class="text-danger">Branding</p>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-thumb" data-aos="fade-up">
-                                <a href="images/portfolio/severin-candrian-nn3uIZqmUtE-unsplash.jpeg" class="image-popup">
-                                    <img src="images/portfolio/severin-candrian-nn3uIZqmUtE-unsplash.jpeg" class="img-fluid portfolio-image" alt="">
-                                </a>
-
-                                <div class="portfolio-info">
-                                    <h4 class="portfolio-title mb-0">Health technology</h4>
-
-                                    <p class="text-success">Art Direction</p>
-                                </div>
-                            </div>
+                      <section class="gallery">
+                        <div class="gallery__item">
+                          <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
+                          <img class="gallery__img" src="https://picsum.photos/id/1015/600/400.jpg" alt=""/>
+                          <label for="img-1" class="gallery__thumb"><img src="https://picsum.photos/id/1015/150/100.jpg" alt=""/></label>
                         </div>
-
-                        <div class="col-lg-6 col-12">
-                            <div class="portfolio-thumb mt-5 mt-lg-0 mb-5" data-aos="fade-up">
-                                <a href="images/portfolio/tyler-nix-Y1drF0Y3Oe0-unsplash.jpeg" class="image-popup">
-                                    <img src="images/portfolio/tyler-nix-Y1drF0Y3Oe0-unsplash.jpeg" class="img-fluid portfolio-image" alt="">
-                                </a>
-
-                                <div class="portfolio-info">
-                                    <h4 class="portfolio-title mb-0">Maki</h4>
-
-                                    <p class="text-warning">Website</p>
-                                </div>
-                            </div>
-
-                            <div class="portfolio-thumb" data-aos="fade-up">
-                                <a href="images/portfolio/thought-catalog-gv-T-OjLe4c-unsplash.jpeg" class="image-popup">
-                                    <img src="images/portfolio/thought-catalog-gv-T-OjLe4c-unsplash.jpeg" class="img-fluid portfolio-image" alt="">
-                                </a>
-
-                                <div class="portfolio-info">
-                                    <h4 class="portfolio-title mb-0">The gig economy</h4>
-
-                                    <p class="text-info">Graphic</p>
-                                </div>
-                            </div>
+                        <div class="gallery__item">
+                          <input type="radio" id="img-2" name="gallery" class="gallery__selector"/>
+                          <img class="gallery__img" src="https://picsum.photos/id/1039/600/400.jpg" alt=""/>
+                          <label for="img-2" class="gallery__thumb"><img src="https://picsum.photos/id/1039/150/100.jpg" alt=""/></label>
                         </div>
+                        <div class="gallery__item">
+                          <input type="radio" id="img-3" name="gallery" class="gallery__selector"/>
+                          <img class="gallery__img" src="https://picsum.photos/id/1057/600/400.jpg" alt=""/>
+                          <label for="img-3" class="gallery__thumb"><img src="https://picsum.photos/id/1057/150/100.jpg" alt=""/></label>
+                        </div>
+                        <div class="gallery__item">
+                          <input type="radio" id="img-4" name="gallery" class="gallery__selector"/>
+                          <img class="gallery__img" src="https://picsum.photos/id/106/600/400.jpg" alt=""/>
+                          <label for="img-4" class="gallery__thumb"><img src="https://picsum.photos/id/106/150/100.jpg" alt=""/></label>
+                        </div>
+                      </section>
 
                     </div>
                 </div>
@@ -202,7 +177,7 @@
                     <div class="row">
 
                         <div class="col-12">
-                            <h2 class="mb-5 text-center" data-aos="fade-up">News & Events</h2>
+                            <h2 class="mb-5 text-center" data-aos="fade-up" id="events">News & Events</h2>
                         </div>
 
                         <div class="col-lg-6 col-12 mb-5 mb-lg-0">
@@ -273,7 +248,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -281,75 +255,33 @@
             <section class=" contact section-padding" id="contact">
                 <div class="container">
                     <div class="row">
-
-                        <div class="col-lg-7 col-12 mx-auto">
-
-                            <h2 class="mb-4 text-center" data-aos="fade-up">Dont' be shy, write to us</h2>
-
-                            <form action="#" method="post" class="contact-form" role="form" data-aos="fade-up">
-
-                                <div class="row">
-
-                                    <div class="col-lg-6 col-6">
-                                        <label for="name" class="form-label">Name <sup class="text-danger">*</sup></label>
-
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="Full name" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-6">
-                                        <label for="email" class="form-label">Email <sup class="text-danger">*</sup></label>
-
-                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
-                                    </div>
-
-                                    <div class="col-12 my-4">
-                                        <label for="message" class="form-label">How can we help?</label>
-
-                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Tell us about the project" required></textarea>
-
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label for="services" class="form-label">Services<sup class="text-danger">*</sup></label>
-                                    </div>
-
-                                    <div class="col-lg-4 col-12">
-                                        <div class="form-check">
-                                            <input type="checkbox" id="checkbox1" name="checkbox1" class="form-check-input">
-
-                                            <label class="form-check-label" for="checkbox1">Branding</label>
-                                          </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-12 my-2 my-lg-0">
-                                        <div class="form-check">
-                                            <input type="checkbox" id="checkbox2" name="checkbox2" class="form-check-input">
-
-                                            <label class="form-check-label" for="checkbox2">Digital Experiences</label>
-                                          </div>
-                                    </div>
-
-                                    <div class="col-lg-4 col-12">
-                                        <div class="form-check">
-                                            <input type="checkbox" id="checkbox3" name="checkbox3" class="form-check-input">
-
-                                            <label class="form-check-label" for="checkbox3">Web Development</label>
-                                          </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-5 col-12 mx-auto mt-5">
-                                    <button type="submit" class="form-control">Send Message</button>
-                                </div>
-                            </form>
+                      <div class="col-lg-7 col-12 mx-auto">
+                        <h2 class="mb-4 text-center" data-aos="fade-up">Besoin de nous contacter ? </h2>
+                        <div class="container" data-aos="fade-up">
+                          <%= simple_form_for @message do |f| %>
+                            <div class="row">
+                              <div class="col-lg-6 col-6">
+                                <%= f.input :name, label:"Name", class:"form-controle" %>
+                              </div>
+                              <div class="col-lg-6 col-6">
+                                <%= f.input :email, label:"Email", class:"form-control" %>
+                              </div>
+                              <div class="col-12 my-4">
+                                <%= f.input :content, label:"Comment nous pouvons vous aider ?", class:"form-control" %>
+                              </div>
+                              <div class="col-12">
+                                <%= f.input :subject %>
+                              </div>
+                                <%= f.button :submit, class:"btn btn-primary" %>
+                            <% end %>
                         </div>
-
+                      </div>
                     </div>
                 </div>
             </section>
 
             <section class="google-map">
-                <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" class="map-iframe" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2611.2092389977292!2d6.179239415943439!3d49.12066117931405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794dea73d10556d%3A0x3a0de75e0fae3ad4!2sConservatoire%20%C3%A0%20rayonnement%20r%C3%A9gional%20de%20Metz%20M%C3%A9tropole%20Gabriel-Piern%C3%A9!5e0!3m2!1sfr!2sfr!4v1642936419987!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </section>
 
         </main>

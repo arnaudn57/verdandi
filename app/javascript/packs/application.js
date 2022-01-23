@@ -20,6 +20,9 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { scroll } from '../components/scroll';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -27,4 +30,6 @@ import "bootstrap";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  // AOS.init();
+  scroll();
 });
