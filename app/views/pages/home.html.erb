@@ -142,7 +142,6 @@
                             <h2 class="mb-5 text-center" data-aos="fade-up" id="galerie">Galerie</h2>
                         </div>
 
-
                       <section class="gallery">
                         <div class="gallery__item">
                           <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
@@ -178,73 +177,26 @@
                             <h2 class="mb-5 text-center" data-aos="fade-up" id="events">News & Events</h2>
                         </div>
 
+                        <% @events.each do |event| %>
                         <div class="col-lg-6 col-12 mb-5 mb-lg-0">
                             <div class="news-thumb" data-aos="fade-up">
                                 <a href="news-detail.html" class="news-image-hover news-image-hover-warning">
                                     <img src="images/news/caroline-lm-uqveD8dYPUM-unsplash.jpg" class="img-fluid large-news-image news-image" alt="">
                                 </a>
 
-                                <div class="news-category bg-warning text-white">News</div>
+                                <div class="news-category bg-warning text-white"><%= event.title %></div>
 
                                 <div class="news-text-info">
                                     <h5 class="news-title">
-                                        <a href="news-detail.html" class="news-title-link">The rise of the gig economy spells the end for these workers the old system</a>
+                                        <a href="news-detail.html" class="news-title-link"><%= event.content %></a>
                                     </h5>
 
-                                    <span class="text-muted">22 hours ago</span>
+                                    <span class="text-muted"><%= event.date %></span>
                                 </div>
                             </div>
                         </div>
+                        <% end %>
 
-                        <div class="col-lg-6 col-12">
-                            <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
-                                <div class="news-top w-100">
-
-                                    <a href="news-detail.html" class="news-image-hover news-image-hover-primary">
-                                        <img src="images/news/jean-philippe-delberghe-MmanXAs1sKw-unsplash.jpeg" class="img-fluid news-image" alt="">
-                                    </a>
-
-                                    <div class="news-category bg-primary text-white">Events</div>
-                                </div>
-
-                                <div class="news-bottom w-100">
-                                    <div class="news-text-info">
-                                        <h5 class="news-title">
-                                            <a href="news-detail.html" class="news-title-link">Job Opportunities: Digital, Marketing</a>
-                                        </h5>
-
-                                        <div class="d-flex flex-wrap">
-                                            <span class="text-muted me-2">
-                                                <i class="bi-geo-alt-fill me-1 mb-2 mb-lg-0"></i>
-                                                Alaska,
-                                            </span>
-
-                                            <span class="text-muted">August 6, 2021</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="news-thumb news-two-column d-flex flex-column flex-lg-row" data-aos="fade-up">
-                                <div class="news-top w-100" data-aos="fade-up">
-
-                                    <a href="news-detail.html" class="news-image-hover news-image-hover-success">
-                                        <img src="images/news/maria-stewart-p4tj0g-_aMM-unsplash.jpeg" class="img-fluid news-image" alt="">
-                                    </a>
-
-                                    <div class="news-category bg-success text-white">News</div>
-                                </div>
-
-                                <div class="news-bottom w-100">
-                                    <div class="news-text-info">
-                                        <h5 class="news-title">
-                                            <a href="news-detail.html" class="news-title-link">What happened to new viral video?</a>
-                                        </h5>
-
-                                        <span class="text-muted">6 days ago</span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -259,18 +211,18 @@
                           <%= simple_form_for @message do |f| %>
                             <div class="row">
                               <div class="col-lg-6 col-6">
-                                <%= f.input :name, label:"Name", class:"form-controle" %>
+                                <%= f.input :name, label:"Nom", class:"form-controle", id:"name_form", required: true%>
                               </div>
                               <div class="col-lg-6 col-6">
-                                <%= f.input :email, label:"Email", class:"form-control" %>
+                                <%= f.input :email, label:"Email", class:"form-control", id:"email_form", required: true%>
                               </div>
                               <div class="col-12 my-4">
-                                <%= f.input :content, label:"Comment nous pouvons vous aider ?", class:"form-control" %>
+                                <%= f.input :content, label:"Comment nous pouvons vous aider ?", class:"form-control", id:"content_form", required: true%>
                               </div>
                               <div class="col-12">
-                                <%= f.input :subject %>
+                                <%= f.input :subject, label:"Sujet", id:"sujbect_form", required: true%>
                               </div>
-                                <%= f.button :submit, class:"btn btn-primary" %>
+                                <%= f.button :submit,"Envoyer", class:"btn btn-primary", id:"msg_btn" %>
                             <% end %>
                         </div>
                       </div>
@@ -279,9 +231,8 @@
             </section>
 
             <section class="google-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2611.2092389977292!2d6.179239415943439!3d49.12066117931405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794dea73d10556d%3A0x3a0de75e0fae3ad4!2sConservatoire%20%C3%A0%20rayonnement%20r%C3%A9gional%20de%20Metz%20M%C3%A9tropole%20Gabriel-Piern%C3%A9!5e0!3m2!1sfr!2sfr!4v1642936419987!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2611.2092389977292!2d6.179239415943439!3d49.12066117931405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794dea73d10556d%3A0x3a0de75e0fae3ad4!2sConservatoire%20%C3%A0%20rayonnement%20r%C3%A9gional%20de%20Metz%20M%C3%A9tropole%20Gabriel-Piern%C3%A9!5e0!3m2!1sfr!2sfr!4v1642936419987!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </section>
-
         </main>
 
 
@@ -301,10 +252,6 @@
                         </a>
                     </div>
 
-                    <div class="col-6">
-                        <p class="copyright-text mb-0">Copyright © Verdandi 2022
-
-                    </div>
 
                     <div class="col-lg-3 col-5 ms-auto">
                         <ul class="social-icon">
@@ -322,17 +269,21 @@
 
                 </div>
             </section>
+            <div class="creator text-center">
+              <p>Réalisé par Nicastro Arnaud</p>
+                <ul>
+                  <li><a href="https://www.linkedin.com/in/arnaud-nicastro/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="3%" height="3%"></a></li>
+                </ul>
+            </div>
+
+            <div class="col-6">
+              <p class="copyright-text mb-0">Copyright © Verdandi 2022
+            </div>
         </footer>
 
         <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
+
         <script src="js/aos.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/magnific-popup-options.js"></script>
-        <script src="js/scrollspy.min.js"></script>
-        <script src="js/custom.js"></script>
 
     </body>
 </html>

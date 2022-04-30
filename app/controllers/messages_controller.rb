@@ -6,11 +6,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    if @message.save
-      flash[:alert] = "Message was successfully send"
-    else
-      flash[:alert] = "Message has not send"
-    end
+    @message.save
   end
 
   def show

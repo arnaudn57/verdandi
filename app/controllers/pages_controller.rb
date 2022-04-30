@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   def home
     @photo = Photo.first
     @message = Message.new
+    @events = Event.all
   end
 end

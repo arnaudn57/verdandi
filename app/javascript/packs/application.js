@@ -23,6 +23,7 @@ import "bootstrap";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { scroll } from '../components/scroll';
+import { popup } from '../components/popup'
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -32,4 +33,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   // AOS.init();
   scroll();
+  popup();
 });
