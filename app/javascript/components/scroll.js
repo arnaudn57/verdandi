@@ -7,7 +7,9 @@ const scroll = () => {
   const members = document.getElementById('members');
 
   btnMembers.addEventListener('click', (event) => {
-    members.scrollIntoView();
+    members.scrollIntoView({
+      behavior: "smooth"
+    });
   })
 
   // Scroll Galerie
@@ -15,7 +17,9 @@ const scroll = () => {
   const galerie = document.getElementById('galerie');
 
   btnGalerie.addEventListener('click', (event) => {
-    galerie.scrollIntoView();
+    galerie.scrollIntoView({
+      behavior: "smooth"
+    });
   })
 
   //Scroll Events
@@ -23,7 +27,9 @@ const scroll = () => {
   const events = document.getElementById('events');
 
   btnEvents.addEventListener('click', (event) => {
-    events.scrollIntoView();
+    events.scrollIntoView({
+      behavior: "smooth"
+    });
   })
 
   //Scroll contact
@@ -31,6 +37,8 @@ const scroll = () => {
   const contact = document.getElementById('contact');
 
   btnContact.addEventListener('click', (event) => {
-    contact.scrollIntoView();
+    contact.scrollIntoView({
+      behavior: "smooth"
+    });
   })
 }

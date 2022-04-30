@@ -24,15 +24,16 @@
         <main>
             <section class="hero" id="hero">
                 <div class="heroText">
-                    <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                    <%# <h1 class="text-white mt-5 mb-lg-4" data-aos="zoom-in" data-aos-delay="800">
                         Verdandi
-                    </h1>
+                    </h1> %>
+                    <%= image_tag 'logo.png', class:"mt-5 mb-lg-4", width:"30%" %>
                     <p class="text-secondary-white-color" data-aos="fade-up" data-aos-delay="1000">
                         L'association de danse et de musique à Metz !
                     </p>
                 </div>
                 <div class="videoWrapper">
-                  <%= video_tag "silouhette.mp4", autoplay: :autoplay, loop: :loop, muted: :muted %>
+                  <%= video_tag "silouhette.mp4", autoplay: :autoplay, loop: :loop, muted: :muted, width:"100%" %>
                 </div>
                 <div class="overlay"></div>
             </section>
